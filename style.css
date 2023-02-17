@@ -1,0 +1,169 @@
+@font-face {
+    font-family: akzidenz-grotesk-regular;
+    src: url('assets/fonts/akzidenz-grotesk-regular.woff2');
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family:  akzidenz-grotesk-regular;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+
+body{
+    background: #000;
+    color: #fff;
+    position:relative;
+
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration-line: underline;
+}
+
+header{
+    width:100%;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.nav-container{
+    width: 99%;
+    margin: auto;
+}
+
+
+.nav-bar {
+    width: 100%;
+    min-height: 50px;
+    margin:auto;
+    text-align: left;
+    align-items: left;
+
+}
+
+
+
+
+.posters-container-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.posters-column-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 33.33%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+
+}
+
+.posters-container-mobile{
+    display:none;
+}
+
+img{
+    max-width: 100%;
+    padding: 0.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.button{
+    width: 20%;
+    border-radius: 0.2em;
+    height: 0.2em;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    cursor:pointer;
+}
+
+
+
+
+/* FOOTER TO THE BOTTOM */
+
+#page-container {
+    position: relative;
+    max-width: 90%;
+    min-height: 100vh;
+    margin:auto;
+
+  }
+
+#content-container{
+    padding-bottom: 5rem;  
+    margin:auto;
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    padding-bottom:1.5rem;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;          
+  }
+
+
+/* MEDIA RESPONSIVE */
+
+@media(max-width:800px){
+  
+*{
+    font-size: 1.1rem;
+}
+
+.nav-container{
+    width: 95%;
+    margin: auto;
+}
+
+.posters-container-desktop{
+    display: none;
+}
+
+.posters-container-mobile{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        flex-direction:column;
+}
+       
+.posters-column-mobile{
+        max-width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+} 
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+ /* "The classroom with all its limitations remains a loca- tion of possibility."
+ ~bell hooks */
