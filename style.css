@@ -151,7 +151,7 @@ footer {
     display: flex;
     position: absolute;
     width: 100%;
-    margin-top: 17%;
+    margin-top: 10%;
     align-items: center;
     justify-content: center;
     z-index: 90;
@@ -160,49 +160,61 @@ footer {
 
 @-moz-keyframes blink {
     0% {
-        opacity:1;
+        opacity: 1;
     }
-    50% {
-        opacity:0;
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 0;
     }
 } 
 
 @-webkit-keyframes blink {
     0% {
-        opacity:1;
+        opacity: 1;
     }
-    50% {
-        opacity:0;
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 0;
     }
 }
 
 @-ms-keyframes blink {
     0% {
-        opacity:1;
+        opacity: 1;
     }
-    50% {
-        opacity:0;
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 0;
     }
 } 
 
 @keyframes blink {
     0% {
-        opacity:1;
+        opacity: 1;
     }
-    50% {
-        opacity:0;
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 0;
     }
 }
 .blinking {
@@ -210,12 +222,11 @@ footer {
     align-items: center;
     justify-content: center;
     margin:auto;
-    width: 33%;
-    -moz-animation: blink normal 2s infinite ease-in-out;
-    -webkit-animation: blink normal 2s infinite ease-in-out; 
-    -ms-animation: blink normal 2s infinite ease-in-out; 
-    animation: blink normal 2s infinite ease-in-ou;
-   
+    width: 63%;
+    -moz-animation: blink normal 1.7s infinite linear;
+    -webkit-animation: blink normal 1.7s infinite linear;
+    -ms-animation: blink normal 1.7s infinite linear;
+    animation: blink normal 1.7s infinite linear;
 }
 
 /* MEDIA RESPONSIVE */
@@ -261,7 +272,7 @@ footer {
 }
 
 #screening-now{
-    margin-top: 50%;
+    margin-top: 30%;
 }
 
 .blinking{
