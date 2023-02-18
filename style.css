@@ -11,7 +11,6 @@
     font-weight: 400;
 }
 
-
 body{
     background:#000;
     color: #fff;
@@ -19,6 +18,12 @@ body{
 
 }
 
+/* Getting rid of the space between two spans*/
+.prevent-spaces{
+    font-size: 0rem;
+}
+
+/*class added to force a line break on screens below 560 px*/
 .mobile-line-break{
     display:none;
 }
@@ -186,7 +191,7 @@ footer {
 
 }
 
-@media(max-width: 562px){
+@media(max-width: 559px){
     .mobile-line-break{
         display:flex;
     }

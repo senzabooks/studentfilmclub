@@ -6,7 +6,7 @@ function  formatDate(date){
 
     const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec",];
 
-    return `${date.getDay()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+    return `${date.getDay()} ${MONTHS[date.getMonth()]} ${date.getFullYear()} `;
 }
 
 function formatTime(date) {
