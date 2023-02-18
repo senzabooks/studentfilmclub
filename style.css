@@ -13,7 +13,7 @@
 
 
 body{
-    background: #000;
+    background:#000;
     color: #fff;
     position:relative;
 
@@ -29,9 +29,7 @@ a{
 }
 
 a:hover{
-    text-underline-offset: 4px;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    opacity: 60%;
 }
 
 header{
@@ -58,6 +56,7 @@ header{
 .date,
 .time{
     font-variant-numeric: tabular-nums;
+    font-feature-settings: "ss01";
 }
 
 
@@ -70,6 +69,7 @@ header{
     max-width: 100%;
 }
 
+
 .posters-column-desktop{
     display: flex;
     align-items: center;
@@ -79,6 +79,8 @@ header{
     margin-right: 0.5%;
 
 }
+
+
 
 .posters-container-mobile{
     display:none;
@@ -91,14 +93,25 @@ img{
     margin-right: 10%;
 }
 
-.button{
-    width: 20%;
-    border-radius: 0.2em;
-    height: 0.2em;
-    background-color: rgba(255, 255, 255, 0.4);
-    display: inline-block;
-    cursor:pointer;
+.about-container{
+    display: flex;
+    align-items: left;
+    max-width: 100%;
 }
+
+.about-column{
+    line-height: 140%;
+    width: min(1080px, 100%);
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+li {
+    list-style: none;
+    line-height: 140%;
+
+}
+
 
 
 
@@ -134,7 +147,7 @@ footer {
   
 *{
     font-size: 1.1rem;
-    line-height: 110%;
+    line-height: 120%;
 }
 
 .nav-container{
@@ -162,6 +175,13 @@ footer {
         margin-left: 0.5%;
         margin-right: 0.5%;
 } 
+
+.about-column{
+    max-width:95%;
+    margin-left:2.5%;
+    
+
+}
 
 
 }
