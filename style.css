@@ -1,6 +1,6 @@
 @font-face {
     font-family: akzidenz-grotesk-regular;
-    src: url('assets/fonts/akzidenz-grotesk-regular.woff2');
+    src: url('assets/fonts/SFC-Clock-Regular.woff2');
 }
 
 *{
@@ -19,13 +19,19 @@ body{
 
 }
 
+.mobile-line-break{
+    display:none;
+}
+
 a{
     color: #fff;
     text-decoration: none;
 }
 
 a:hover{
+    text-underline-offset: 4px;
     text-decoration-line: underline;
+    text-decoration-thickness: 2px;
 }
 
 header{
@@ -47,6 +53,11 @@ header{
     text-align: left;
     align-items: left;
 
+}
+
+.date,
+.time{
+    font-variant-numeric: tabular-nums;
 }
 
 
@@ -123,6 +134,7 @@ footer {
   
 *{
     font-size: 1.1rem;
+    line-height: 110%;
 }
 
 .nav-container{
@@ -151,6 +163,17 @@ footer {
         margin-right: 0.5%;
 } 
 
+
+}
+
+@media(max-width: 562px){
+    .mobile-line-break{
+        display:flex;
+    }
+
+    .posters-container-mobile{
+        margin-top: 1em;
+    }
 
 
 }

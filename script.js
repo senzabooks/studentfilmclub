@@ -1,48 +1,29 @@
-const countdown = () => {
 
-//date and time to countdown to 
+const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
 
-const countDate = new Date("Feb 21,2023 19:08:00").getTime();
-const now = new Date().getTime();
-    
-document.querySelector(".now").innerText = now;
+function  formatDate(date){
 
-//calculate remaining time
+    const DAYS = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday" ];
+    const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec",];
 
-const remainingTime = countDate - now;
-
-
-// time to days hours minutes seconds
-
-const second = 1000;
-const minute = second * 60;
-const hour = minute * 60;
-const day = hour * 24;
-
-const textDay = Math.floor(remainingTime / day);
-const textHour = Math.floor((remainingTime % day)/hour);
-const textMinute = Math.floor((remainingTime % hour)/minute);
-const textSecond = Math.floor((remainingTime % minute)/second);
-
-// switching from plural to singular on html thx to bartekp.nl
-document.querySelector(".days").innerText = textDay === 1 ? "day" : "days";
-document.querySelector(".hours").innerText = textHour === 1 ? "hour" : "hours";
-document.querySelector(".minutes").innerText = textMinute === 1 ? "minute" : "minutes";
-document.querySelector(".seconds").innerText = textSecond === 1 ? "second" : "seconds";
-
-
-//updating the text on html
-//check if the time is past 0 
-
-document.querySelector(".day").innerText = textDay > 0 ? textDay: 0;
-document.querySelector(".hour").innerText = textHour > 0 ? textHour: 0;
-document.querySelector(".minute").innerText = textMinute > 0 ? textMinute: 0;
-document.querySelector(".second").innerText = textSecond > 0 ? textSecond: 0;
-
-
-
-
-//run the countdown 
+    return `${DAYS[date.getDay()]}, ${date.getDay()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
 }
-setInterval (countdown, 500);
 
+function formatTime(date) {
+
+    const hours12 = date.getHours() % 12 || 12;
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    const isAM = date.getHours() < 12;
+
+    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")} ${isAM? "AM" : "PM"}`;
+
+}
+
+
+setInterval(() => {
+const now = new Date();
+dateElement.textContent = formatDate(now);
+timeElement.textContent = formatTime(now);
+}, 500);
