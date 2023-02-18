@@ -1,14 +1,18 @@
 
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
-
+/**  
+*@param  {Date} date
+*/
 function  formatDate(date){
 
     const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec",];
 
-    return `${date.getDay()} ${MONTHS[date.getMonth()]} ${date.getFullYear()} `;
+    return `${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()} `;
 }
-
+/**  
+*@param  {Date} date
+*/
 function formatTime(date) {
 
     const hours12 = date.getHours() % 12 || 12;

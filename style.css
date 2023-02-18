@@ -58,7 +58,6 @@ header{
 
 }
 
-.date,
 .time{
     font-variant-numeric: tabular-nums;
     font-feature-settings: "ss01";
