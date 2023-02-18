@@ -20,6 +20,7 @@ function formatTime(date) {
 
 }
 
+document.getElementById("screening-now").style.display="none"
 
 setInterval(() => {
 const now = new Date();
