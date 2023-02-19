@@ -24,7 +24,6 @@ function formatTime(date) {
 
 }
 
-document.getElementById("screening-now").style.display="none"
 
 setInterval(() => {
 const now = new Date();
@@ -32,6 +31,7 @@ dateElement.textContent = formatDate(now);
 timeElement.textContent = formatTime(now);
 }, 500);
 
+document.getElementById("screening-now").style.display="none"
 
 //DAYS      const DAYS = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday" ];
 //DAYS      ${DAYS[date.getDay()]},
