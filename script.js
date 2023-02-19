@@ -26,7 +26,7 @@ function formatTime(date) {
     const seconds = date.getSeconds();
     const AM = date.getHours() < 12;
 
-    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
+    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
 }
 
 function displayBanner(date) {
