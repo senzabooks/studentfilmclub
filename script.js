@@ -1,3 +1,4 @@
+//Variables to write in manually :( 
 const screeningDay = 21;
 const filmDurationHours = 1;
 const filmDurationMinutes = 36;
