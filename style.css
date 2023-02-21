@@ -322,7 +322,7 @@ a:hover {
 
 
 
-@media(max-width: 559px){
+@media(max-width: 561px){
     .mobile-line-break{
         display:flex;
     }
@@ -332,7 +332,26 @@ a:hover {
     }
 
     .posters-container-mobile{
-        margin-top: 1em;
+        margin-top: 2rem;
+    }
+
+
+}
+
+@media(max-width: 331px){
+    *{
+        font-size: 1rem;
+    }
+    .mobile-line-break{
+        display:flex;
+    }
+
+    .text-column{
+        padding-top: 0;
+    }
+
+    .posters-container-mobile{
+        margin-top: 0;
     }
 
 
