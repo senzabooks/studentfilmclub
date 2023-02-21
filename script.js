@@ -2,7 +2,7 @@
 const screeningDay = 21;
 const filmDurationHours = 1;
 const filmDurationMinutes = 36;
-let screeningStartHour = 2;
+let screeningStartHour = 7;
 
 
 const timeElement = document.querySelector(".time");
