@@ -1,4 +1,4 @@
-/* SETUP*/
+
 @font-face {
     font-family: akzidenz-grotesk-regular;
     src: url('assets/fonts/SFC-Clock-Regular.woff2');
@@ -8,8 +8,9 @@
     margin:0;
     padding:0;
     font-family:  akzidenz-grotesk-regular;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
+    line-height: 130%;
 }
 
 body{
@@ -29,7 +30,7 @@ body{
     display:none;
 }
 
-/*links*/
+/*LINKS*/
 a{
     color: #fff;
     text-decoration: none;
@@ -92,29 +93,37 @@ img{
 }
 
 
-.about-container{
+.text-container{
     display: flex;
     align-items: left;
     max-width: 100%;
 }
 
-.about-column{
-    line-height: 140%;
-    width: min(1080px, 100%);
+.text-column{
+    width: min(680px, 100%);
     margin-left: 0.5%;
     margin-right: 0.5%;
 }
 
 li {
     list-style: none;
-    line-height: 140%;
+    line-height: 1.5rem;
 
 }
 
-/* putting the colon higher when displaying clock*/
+sup {
+    font-size: 0.65rem;
+}
+
+
+
+#show-hide-timestamp{
+    display:inline;
+}
 
 .time{
     font-variant-numeric: tabular-nums;
+    /* stylistic set 01 to put the colon higher when displaying clock*/
     font-feature-settings: "ss01";
 }
 
@@ -122,7 +131,8 @@ li {
 
 
 
-/* FOOTER TO THE BOTTOM */
+
+/* FOOTER */
 
 #page-container {
     position: relative;
@@ -133,40 +143,36 @@ li {
   }
 
 #content-container{
-    padding-bottom: 5rem;  
+    padding-bottom: 2rem;
     margin:auto;
 }
 
 footer {
     position: absolute;
-    text-align: center;
-    padding-bottom:1.5rem;
+    padding-bottom:0.5rem;
     bottom: 0;
     width: 100%;
-    height: 2rem;          
+    height: 2rem;   
+    text-align: right;       
   }
 
+.footer-text {
+    font-size: 12px;
+    opacity: 60% ;
+}
 
+.footer-link {
+    font-size: 12px;
 
-
-/* main banner including blinking animation and text to show in between screenings*/
-
-#main-banner{
-    /*text*/
-    color: red;
-    text-shadow: 0px 0px 1px #ff0000;
-   
-    /*layout*/
-    display: flex;
-    position: absolute;
-    width: 100%;
-    margin-top: min(230px,20%);
-    align-items: center;
-    justify-content: center;
-    z-index: 90;
 }
 
 
+.footer-link
+a:hover {
+    color:blue;
+}
+
+/* ANIMATION */ 
 @-moz-keyframes blink {
     0% {
         opacity: 1;
@@ -226,32 +232,33 @@ footer {
         opacity: 0;
     }
 }
-#blinking-banner-day,
-#blinking-banner-now {
-    font-size: 1.6rem;
-    line-height: 140%;
+
+#blinking-span-day{
     display: none;
-    align-items: center;
-    justify-content: center;
-    margin:auto;
-    width: 63%;
+    color: #fff;
     -moz-animation: blink normal 1.7s infinite linear;
     -webkit-animation: blink normal 1.7s infinite linear;
     -ms-animation: blink normal 1.7s infinite linear;
     animation: blink normal 1.7s infinite linear;
 }
 
-#thanks-banner{
-    font-size: 1.6rem;
-    line-height: 140%;
+#blinking-span-now {
     display: none;
-    text-align: center;
-    align-items: center;
-    justify-content: center;  
-    margin:auto;
-    width: max(380px, 24%);
-
+    color: #fff;
+    -moz-animation: blink normal 1.7s infinite linear;
+    -webkit-animation: blink normal 1.7s infinite linear;
+    -ms-animation: blink normal 1.7s infinite linear;
+    animation: blink normal 1.7s infinite linear;
 }
+
+#show-hide-thanks{
+    display: none;
+    }
+    
+ #show-hide-posters{
+   display:none;
+ }
+
 
 
 
@@ -261,7 +268,7 @@ footer {
 @media(max-width:800px){
   
 *{
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 120%;
 }
 
@@ -291,32 +298,26 @@ footer {
         margin-right: 0.5%;
 } 
 
-.about-column{
+
+.text-column{
     max-width:95%;
     margin-left:2.5%;
     
 
 }
 
-#main-banner{
-    margin-top: 30%;
-}
-
-#blinking-banner-day,
-#blinking-banner-now{
-    font-size: 1.6rem;
-    width:90%;
-}
-#thanks-banner{
-    font-size: 1.6rem;
-    width:min(400px,70%);
-}
 
 }
+
+
 
 @media(max-width: 559px){
     .mobile-line-break{
         display:flex;
+    }
+
+    .text-column{
+        padding-top: 1rem;
     }
 
     .posters-container-mobile{

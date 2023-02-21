@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="script.js" async></script>
+    <script src="noscroll.js" async></script>
 
     <title>Student Film Club</title>
+    
 </head>
 <body>
     
-    <div id="main-banner"> <p id="blinking-banner-day"> Screening Day!</p> <p id="blinking-banner-now"> Screening Now!</p> 
-        <p id="thanks-banner">Thank you to everyone who joined us at the previous screening. We will share what the next film is soon&nbsp;&mdash; watch this&nbsp;space.</p></div>
-
     <div id="page-container"> 
         
         <div id="content-container">
@@ -26,72 +26,78 @@
                     <p class="prevent-spaces">
                         <a href="about.html">Student Film Club</a>
                         <span>, </span>
-                        <br class="mobile-line-break">
-                        <span class="date"></span>
-                        <span class="time"></span>
-                        <br class="mobile-line-break">
+                        
+                            <span id="show-hide-timestamp">
+                                <br class="mobile-line-break">
+                                <span class="date"></span>
+                                <span class="time"></span>
+                            </span>
+                            <span id="blinking-span-day">Screening Day!</span>
+                            <span id="blinking-span-now">Screening Now!</span>
                     </p>
                 </nav>
             </div>
         </header>
  
-        
+    
+       <div id='show-hide-posters'>
+            <div class="posters-container-desktop">
+            
+                <div class="posters-column-desktop">
+                    <img src="assets/posters/feb/sfc_feb_1.png" alt="Jelle Snijders and Raymond van den Bos"> 
+                </div>
 
-        <div class="posters-container-desktop">
-        
-            <div class="posters-column-desktop">
-                <img src="assets/posters/feb/sfc_feb_1.png" alt="Jelle Snijders and Raymond van den Bos"> 
+                <div class="posters-column-desktop">
+                    <img src="assets/posters/feb/sfc_feb_2.png" alt="House"> 
+                </div>
+
+                <div class="posters-column-desktop">
+                    <img src="assets/posters/feb/sfc_feb_3.png" alt="I want my time with you">
+                </div>
             </div>
 
-            <div class="posters-column-desktop">
-                <img src="assets/posters/feb/sfc_feb_2.png" alt="House"> 
-            </div>
 
-            <div class="posters-column-desktop">
-                <img src="assets/posters/feb/sfc_feb_3.png" alt="I want my time with you">
+            <div  class="posters-container-mobile">
+
+                <div class="posters-column-mobile">
+                    <img src="assets/posters/feb/sfc_feb_2.png" alt="House"> 
+                </div>
+            
+                <div class="posters-column-mobile">
+                    <img src="assets/posters/feb/sfc_feb_1.png" alt="Jelle Snijders and Raymond van den Bos"> 
+                </div>
+
+
+                <div class="posters-column-mobile">
+                    <img src="assets/posters/feb/sfc_feb_3.png" alt="I want my time with you">
+                </div>
+            </div>
+        </div>
+    
+        
+
+        <div id="show-hide-thanks" class="text-container">
+            <div class="text-column">
+                <p>Thank you for coming to the screening on the 21<sup>st</sup> February. See you next time. Watch this space for announcements!</p>
             </div>
         </div>
 
-
-        <div class="posters-container-mobile">
-
-            <div class="posters-column-mobile">
-                <img src="assets/posters/feb/sfc_feb_2.png" alt="House"> 
-            </div>
-        
-            <div class="posters-column-mobile">
-                <img src="assets/posters/feb/sfc_feb_1.png" alt="Jelle Snijders and Raymond van den Bos"> 
-            </div>
-
-
-            <div class="posters-column-mobile">
-                <img src="assets/posters/feb/sfc_feb_3.png" alt="I want my time with you">
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="countdown-container">
-
-        </div>
 
     </div>
+
         
     <footer>
-       <p> </p>
-     </footer>
+        
+    </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="noscroll.js"></script>
 </body>
 </html>
 
-<!--Thank you to everyone who joined us at the previous screening. We will share what the next fil is soon&nbsp;&mdash; watch this&nbsp;space.-->
+<!--Thank you to everyone who joined us at the previous screening. We will share what the next film is soon&nbsp;&mdash; watch this&nbsp;space.-->
+
+<!--
+    <div id="main-banner"> <p id="blinking-banner-day"> Screening Day!</p> <p id="blinking-banner-now"> Screening Now!</p> 
+    <p id="thanks-banner">Thank you to everyone who joined us at the previous screening. We will share what the next film is soon&nbsp;&mdash; watch this&nbsp;space.</p></div>
+    -->

@@ -1,6 +1,6 @@
 const screeningDay = 21;
 const filmDurationHours = 1;
-const filmDurationsMinutes = 28;
+const filmDurationMinutes = 36;
 const screeningStartHour = 7;
 
 
@@ -12,7 +12,7 @@ const dateElement = document.querySelector(".date");
 */
 function  formatDate(date){
 
-    const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec",];
+    const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec"];
 
     return `${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()} `;
 }
@@ -26,31 +26,49 @@ function formatTime(date) {
     const seconds = date.getSeconds();
     const AM = date.getHours() < 12;
 
-    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
+    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
+    /*:${seconds.toString().padStart(2,"0")}*/
 }
 
-function displayBanner(date) {
+function screeningDayCommunication(date) {
 
     const hours12 = date.getHours() % 12 || 12;
     const minutes = date.getMinutes();
     const AM = date.getHours() < 12;
     const day = date.getDate();
 
-    const screeningEndHour = screeningStartHour +filmDurationHours;
-    const screeningEndMinute = filmDurationsMinutes;
+    // variables for when the films ends
+    const screeningEndHour = screeningStartHour + filmDurationHours;
+    const screeningEndMinute = filmDurationMinutes;
 
-    // Screening Day blinking banner 
+    // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
+    const filmEndedToday = day===screeningDay && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
+    const thanksDays = day - screeningDay > 0 && day - screeningDay <= 3;
+
+    //variable to check if it is screening day and film hasn't started
     const screeningDayToday = day===screeningDay && hours12<screeningStartHour;
-    document.getElementById('blinking-banner-day').style.display = screeningDayToday? "flex" : "none";
 
-    // Thanks Banner when the film ends
-    const filmEnded = day===screeningDay && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
-    const thanksBannerDays = day - screeningDay >= 0 && day - screeningDay <= 3;
-    document.getElementById('thanks-banner').style.display =  thanksBannerDays && filmEnded ? "flex" : "none"; 
+    //variable to check if the film is screening now
+    const screeningNow = day===screeningDay && hours12 >=  screeningStartHour && !filmEndedToday;
 
+
+    // hide date and time on the day of the screening
+    document.getElementById('show-hide-timestamp').style.display =  day===screeningDay && !filmEndedToday ? "none" : "inline" ;
+
+    // show Screening Day blinking banner 
+    document.getElementById('blinking-span-day').style.display = screeningDayToday? "inline" : "none";
+    
     // Screening Now blinking banner 
-    const screeningNow = day===screeningDay && hours12 >=  screeningStartHour && !filmEnded;
-    document.getElementById('blinking-banner-now').style.display = screeningNow? "flex" : "none";
+    document.getElementById('blinking-span-now').style.display = screeningNow ? "inline" : "none";
+    
+    //show the container with the thanks message
+    document.getElementById('show-hide-thanks').style.display =  thanksDays || filmEndedToday ? "flex" : "none";
+
+    //hide posters to make space for the thanks message
+    document.getElementById('show-hide-posters').style.display =  !thanksDays && !filmEndedToday ? "flex" : "none";
+    
+
+    
 }
 
 
@@ -58,8 +76,9 @@ setInterval(() => {
 const now = new Date();
 dateElement.textContent = formatDate(now);
 timeElement.textContent = formatTime(now);
-displayBanner(now);
-}, 500);
+screeningDayCommunication(now);
+}, 1);
+
 
 
 

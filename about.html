@@ -8,51 +8,61 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="script.js" async></script>
+    <script src="noscroll.js" async></script>
 
     <title>Student Film Club</title>
+
 </head>
 <body>
     <div id="page-container"> 
 
         <div id="content-container">
             
-        <header>
-             <div class="nav-container">
-                <nav class="nav-bar">
-                    <p class="prevent-spaces">
-                        <a href="index.html">Student Film Club</a>
-                        <span>, </span>
-                        <br class="mobile-line-break">
-                        <span class="date"></span>
-                        <span class="time"></span>
-                        <br class="mobile-line-break">
-                        <br class="mobile-line-break">
-                    </p>
-                </nav>
-            </div>
-        </header>
+            <header>
+                <div class="nav-container">
+                   <nav class="nav-bar">
+                       <p class="prevent-spaces">
+                           <a href="index.html">Student Film Club</a>
+                           <span>, </span>
+                           
+                               <span id="show-hide-timestamp">
+                                    <br class="mobile-line-break">
+                                   <span class="date"></span>
+                                   <span class="time"></span>
+                               </span>
+                               <span id="blinking-span-day">Screening Day!</span>
+                               <span id="blinking-span-now">Screening Now!</span>       
+                       </p>
+                   </nav>
+               </div>
+           </header>
 
-        <div class="about-container">
-            <div class="about-column">
-            Student Film Club takes place at KABK, Den Haag (NL). Eeach month a different person is asked to choose a film. Georgia's former prime minister has found a unique hobby. He collects century-old trees, some as tall as 15-floor buildings, from communities along the Georgian coast.
+        <div class="text-container">
+            <div class="text-column">
+            <p>Student Film Club happens on the last (term-time) Tuesday of every month at KABK, NL. An artist or designer is asked to select a film for art school students today.</p>
             <br><br>
             <ul>
-                <li>List of previous contributors:</li>  
+                <li>Student Film Club is run by:</li>  
+                <li>Malva Askerup</li>
+                <li>Ivo Blackwood</li>
+                <li>Andre Kahveciyan</li>
+                <li>Klaudia Orczykowska</li>
             </ul>
             </div>
         </div>
         
 
     </div>
-        
+    
     <footer>
-       <p> </p>
+        <div class="nav-container">
+            <p class="footer-text">website by <a class="footer-link" href="https://senzabooks.github.io/senzabooks/" target="_blank">Stanisław Zieliński</a></p>
+        </div>
      </footer>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="noscroll.js"></script>
+   
 </body>
 </html>
