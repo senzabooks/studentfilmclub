@@ -38,19 +38,19 @@ function screeningDayCommunication(date) {
     const AM = date.getHours() < 12;
     const day = date.getDate();
 
-    // variables for when the films ends
+    // variables for the end of the film
     const screeningEndHour = screeningStartHour + filmDurationHours;
     const screeningEndMinute = filmDurationMinutes;
 
     // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
-    const filmEndedToday = day===screeningDay && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
+    const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
     const thanksDays = day - screeningDay > 0 && day - screeningDay <= 3;
 
     //variable to check if it is screening day and film hasn't started
-    const screeningDayToday = day===screeningDay && hours12<screeningStartHour;
+    const screeningDayToday = day===screeningDay && ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
 
     //variable to check if the film is screening now
-    const screeningNow = day===screeningDay && hours12 >=  screeningStartHour && !filmEndedToday;
+    const screeningNow = day===screeningDay && !AM && hours12 >=  screeningStartHour && !filmEndedToday;
 
 
     // hide date and time on the day of the screening

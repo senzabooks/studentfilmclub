@@ -256,10 +256,10 @@ a:hover {
 #blinking-span-now {
     display: none;
     color: #fff;
-    /*-moz-animation: blink normal 1.7s infinite linear;
+    -moz-animation: blink normal 1.7s infinite linear;
     -webkit-animation: blink normal 1.7s infinite linear;
     -ms-animation: blink normal 1.7s infinite linear;
-    animation: blink normal 1.7s infinite linear;*/
+    animation: blink normal 1.7s infinite linear;
 }
 
 #show-hide-thanks{
