@@ -36,7 +36,7 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+.text-link:hover{
     opacity: 60%;
 }
 
@@ -80,13 +80,16 @@ header{
     margin-right: 0.5%;
 
 }
-.link-in-column{
+.img-link{
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 100%;
     margin:auto;
-
+}
+.img-link
+:hover{
+    opacity: 100%;
 }
 
 .posters-container-mobile{
