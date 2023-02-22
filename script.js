@@ -2,7 +2,7 @@
 const screeningDay = 21;
 const filmDurationHours = 1;
 const filmDurationMinutes = 36;
-let screeningStartHour = 7;
+const screeningStartHour = 7;
 
 
 const timeElement = document.querySelector(".time");
@@ -43,7 +43,7 @@ function screeningDayCommunication(date) {
 
 
     // variables for the end of the film
-    const screeningEndHour = screeningStartHour + filmDurationHours;
+    let screeningEndHour = screeningStartHour + filmDurationHours;
     const screeningEndMinute = filmDurationMinutes;
 
     if (AM){
@@ -52,7 +52,7 @@ function screeningDayCommunication(date) {
 
     // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
     const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
-    const thanksDays = day - screeningDay > 0 && day - screeningDay <= 3;
+    const thanksDays = day - screeningDay > 0 && day - screeningDay < 5;
 
     //variable to check if it is screening day and film hasn't started
     const screeningDayToday = day===screeningDay && ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
