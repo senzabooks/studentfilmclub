@@ -1,9 +1,9 @@
 //Variables to write in manually :( 
-const screeningDay = 21;
+const screeningDay = 0;
 const filmDurationHours = 1;
 const filmDurationMinutes = 36;
 const screeningStartHour = 7;
-const daysBetween = 20;
+const daysBetween = 5;
 
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
