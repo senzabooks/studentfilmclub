@@ -1,9 +1,9 @@
 //Variables to write in manually :( 
-const screeningDay = 0;
+const screeningDay = 21;
 const filmDurationHours = 1;
 const filmDurationMinutes = 36;
 const screeningStartHour = 7;
-const daysBetween = 5;
+const daysBetween = 20;
 
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
@@ -52,7 +52,7 @@ function screeningDayCommunication(date) {
 
     // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
     const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
-    const thanksDays = day - screeningDay > 0 && day - screeningDay < daysBetween;
+    const thanksDays = day - screeningDay < daysBetween;
 
     //variable to check if it is screening day and film hasn't started
     const screeningDayToday = day===screeningDay && ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
