@@ -1,8 +1,8 @@
 //Variables to write in manually :( 
-const screeningDay = 21;
-const filmDurationHours = 1;
-const filmDurationMinutes = 36;
-const screeningStartHour = 7;
+const screeningDay = 28;
+const filmDurationHours = 3;
+const filmDurationMinutes = 22;
+const screeningStartHour = 6;
 const daysBetween = 20;
 
 const timeElement = document.querySelector(".time");
@@ -27,7 +27,7 @@ function formatTime(date) {
     const seconds = date.getSeconds();
     const AM = date.getHours() < 12;
 
-    return `${hours12.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
+    return `${hours12.toString().padStart(2,"0")}.${minutes.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
     /*:${seconds.toString().padStart(2,"0")}*/
 }
 
