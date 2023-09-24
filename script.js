@@ -1,8 +1,8 @@
 //Variables to write in manually :( 
-const screeningDay = 28;
-const filmDurationHours = 3;
-const filmDurationMinutes = 22;
-const screeningStartHour = 6;
+const screeningDay = 3;
+const filmDurationHours = 2;
+const filmDurationMinutes = 23;
+const screeningStartHour = 7;
 const daysBetween = 20;
 
 const timeElement = document.querySelector(".time");
@@ -13,7 +13,7 @@ const dateElement = document.querySelector(".date");
 */
 function  formatDate(date){
 
-    const MONTHS = ["Jan", "Feb", "Mar","Apr", "May", "Jun","Jul", "Aug", "Sep","Oct", "Nov", "Dec"];
+    const MONTHS = ["jan", "feb", "mar","apr", "may", "jun","jul", "aug", "sep","oct", "nov", "dec"];
 
     return `${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()} `;
 }
@@ -27,7 +27,7 @@ function formatTime(date) {
     const seconds = date.getSeconds();
     const AM = date.getHours() < 12;
 
-    return `${hours12.toString().padStart(1,"0")}.${minutes.toString().padStart(2,"0")} ${AM? "AM" : "PM"}`;
+    return `${hours12.toString().padStart(1,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")} ${AM? "am" : "pm"}`;
     /*:${seconds.toString().padStart(2,"0")}*/
 }
 
