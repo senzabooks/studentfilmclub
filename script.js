@@ -1,5 +1,5 @@
 //Variables to write in manually :( 
-const screeningDay = 3;
+const screeningDay = 4;
 const filmDurationHours = 2;
 const filmDurationMinutes = 23;
 const screeningStartHour = 7;
