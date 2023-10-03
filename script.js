@@ -1,8 +1,8 @@
 //Variables to write in manually :( 
 const screeningDay = 3;
-const filmDurationHours = 2;
-const filmDurationMinutes = 23;
-const screeningStartHour = 7;
+//const filmDurationHours = 2;
+//const filmDurationMinutes = 23;
+//const screeningStartHour = 7;
 const daysBetween = 4;
 
 const timeElement = document.querySelector(".time");
@@ -43,22 +43,25 @@ function screeningDayCommunication(date) {
 
 
     // variables for the end of the film
-    let screeningEndHour = screeningStartHour + filmDurationHours;
-    const screeningEndMinute = filmDurationMinutes;
+    //let screeningEndHour = screeningStartHour + filmDurationHours;
+    //const screeningEndMinute = filmDurationMinutes;
 
     if (AM){
         screeningEndHour = 99;
     }
 
+    //[[[i use these to comment out thingss i dont want to use but theyre already in the comments]]]
+
     // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
-    const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
+    //const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
     const thanksDays = day + screeningDay < daysBetween;
 
-    //variable to check if it is screening day and film hasn't started
-    const screeningDayToday = day===screeningDay && ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
+    //variable to check if it is screening day [[[and film hasn't started]]]
+    const screeningDayToday = day===screeningDay 
+    //&& ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
 
     //variable to check if the film is screening now
-    const screeningNow = day===screeningDay && !AM && hours12 >=  screeningStartHour && !filmEndedToday;
+    //const screeningNow = day===screeningDay && !AM && hours12 >=  screeningStartHour && !filmEndedToday;
 
 
     // hide date and time on the day of the screening
@@ -68,7 +71,7 @@ function screeningDayCommunication(date) {
     document.getElementById('blinking-span-day').style.display = screeningDayToday? "inline" : "none";
     
     // Screening Now blinking banner 
-    document.getElementById('blinking-span-now').style.display = screeningNow ? "inline" : "none";
+   // document.getElementById('blinking-span-now').style.display = screeningNow ? "inline" : "none";
     
     //show the container with the thanks message
     document.getElementById('show-hide-thanks').style.display =  thanksDays || filmEndedToday ? "flex" : "none";
