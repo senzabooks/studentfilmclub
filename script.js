@@ -46,15 +46,16 @@ function screeningDayCommunication(date) {
     //let screeningEndHour = screeningStartHour + filmDurationHours;
     //const screeningEndMinute = filmDurationMinutes;
 
-    if (AM){
-        screeningEndHour = 99;
-    }
+    //thing to prevent displaying screening now banner too early
+    //if (AM)
+    //{ screeningEndHour = 99;}
+
 
     //[[[i use these to comment out thingss i dont want to use but theyre already in the comments]]]
 
     // variables for 'Screening Now!' blinking span, Thanks text when the film ends 
     //const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
-    const thanksDays = day + screeningDay < daysBetween;
+    const thanksDays = (screeningDay+7) > day && day > screeningDay;
 
     //variable to check if it is screening day [[[and film hasn't started]]]
     const screeningDayToday = day===screeningDay 
@@ -65,19 +66,22 @@ function screeningDayCommunication(date) {
 
 
     // hide date and time on the day of the screening
-    document.getElementById('show-hide-timestamp').style.display =  day===screeningDay && !filmEndedToday ? "none" : "inline" ;
+    document.getElementById('show-hide-timestamp').style.display =  screeningDayToday ? "none" : "inline" ;
+    //&& !filmEndedToday ? "none" : "inline" ;
 
     // show Screening Day blinking banner 
-    document.getElementById('blinking-span-day').style.display = screeningDayToday? "inline" : "none";
+    document.getElementById('blinking-span-day').style.display = screeningDayToday ? "inline" : "none";
     
     // Screening Now blinking banner 
    // document.getElementById('blinking-span-now').style.display = screeningNow ? "inline" : "none";
     
     //show the container with the thanks message
-    document.getElementById('show-hide-thanks').style.display =  thanksDays || filmEndedToday ? "flex" : "none";
+    document.getElementById('show-hide-thanks').style.display =  thanksDays ? "flex" : "none";
+    //|| filmEndedToday ? "flex" : "none";
 
     //hide posters to make space for the thanks message
-    document.getElementById('show-hide-posters').style.display =  !thanksDays && !filmEndedToday ? "flex" : "none";
+    document.getElementById('show-hide-posters').style.display =  !thanksDays ? "flex" : "none";
+    //&& !filmEndedToday ? "flex" : "none";
     
 
     
