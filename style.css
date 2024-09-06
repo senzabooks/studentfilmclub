@@ -109,10 +109,14 @@ header {
   max-width: 100%;
 }
 
-.text-column {
+.main-text,
+.about-text {
   width: min(680px, 100%);
   margin-left: 0.5%;
   margin-right: 0.5%;
+}
+.about-text p {
+  margin-bottom: 25px;
 }
 
 li {
@@ -250,10 +254,6 @@ footer {
     animation: blink normal 1.7s infinite linear;*/
 }
 
-#show-hide-thanks {
-  display: none;
-}
-
 #show-hide-posters {
   display: none;
 }
@@ -299,6 +299,7 @@ footer {
   .text-column {
     max-width: 95%;
     margin-left: 2.5%;
+    white-space: pre-wrap;
   }
 }
 
