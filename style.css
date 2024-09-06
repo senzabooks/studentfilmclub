@@ -35,7 +35,7 @@ a {
   text-decoration: none;
 }
 
-.text-link:hover {
+a:hover {
   opacity: 60%;
 }
 
@@ -60,29 +60,13 @@ header {
   align-items: left;
 }
 
-.posters-container-desktop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-}
-
-.posters-column-desktop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 33.33%;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-}
-
-#floatingDiv {
+#floating-div {
   position: absolute;
   z-index: 9999;
   pointer-events: none;
 }
 
-#floatingImage {
+#current-poster {
   width: 25vw;
   height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -99,17 +83,13 @@ header {
   opacity: 100%;
 }
 
-.posters-container-mobile {
-  display: none;
-}
-
 .text-container {
   display: flex;
   align-items: left;
   max-width: 100%;
 }
 
-.main-text,
+.current-text,
 .about-text {
   width: min(680px, 100%);
   margin-left: 0.5%;
@@ -128,7 +108,7 @@ sup {
   font-size: 0.65rem;
 }
 
-#show-hide-timestamp {
+#timestamp {
   display: inline;
 }
 
@@ -236,28 +216,6 @@ footer {
   }
 }
 
-#blinking-span-day {
-  display: none;
-  color: #fff;
-  /* -moz-animation: blink normal 1.7s infinite linear;
-    -webkit-animation: blink normal 1.7s infinite linear;
-    -ms-animation: blink normal 1.7s infinite linear;
-    animation: blink normal 1.7s infinite linear;*/
-}
-
-#blinking-span-now {
-  display: none;
-  color: #fff;
-  /* -moz-animation: blink normal 1.7s infinite linear;
-    -webkit-animation: blink normal 1.7s infinite linear;
-    -ms-animation: blink normal 1.7s infinite linear;
-    animation: blink normal 1.7s infinite linear;*/
-}
-
-#show-hide-posters {
-  display: none;
-}
-
 /* MEDIA RESPONSIVE */
 
 @media (max-width: 800px) {
@@ -267,33 +225,12 @@ footer {
   }
 
   .nav-container {
-    width: 95%;
+    width: 99%;
     margin: auto;
   }
 
-  #floatingImage {
+  #current-poster {
     width: 15rem;
-  }
-
-  .posters-container-desktop {
-    display: none;
-  }
-
-  .posters-container-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    flex-direction: column;
-  }
-
-  .posters-column-mobile {
-    max-width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
   }
 
   .text-column {
@@ -323,10 +260,6 @@ footer {
 
   .text-column {
     padding-top: 2rem;
-  }
-
-  .posters-container-mobile {
-    margin-top: 0;
   }
 }
 

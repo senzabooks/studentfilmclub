@@ -1,11 +1,11 @@
 const aboutText = document.getElementsByClassName("about-text")[0];
-const mainText = document.getElementsByClassName("main-text")[0];
-const floatingImageBlock = document.getElementById("floatingImage");
-console.log(mainText, aboutText);
+const currentText = document.getElementsByClassName("current-text")[0];
+const currentPosterBlock = document.getElementById("current-poster");
+//console.log(currentText, aboutText);
 
 const groq_query = `*[_type == "main"] {
     aboutText,
-    mainText,
+    currentText,
     'posterUrl': poster.asset -> url
     }`;
 function findMark(markDefs, key) {
@@ -33,7 +33,7 @@ function applyMarks(text, marks, markDefs) {
 
     const linkDef = findMark(markDefs, mark);
     if (linkDef && linkDef._type === "link" && linkDef.href) {
-      html = ` <a href="${linkDef.href}">${html}</a>`;
+      html = ` <a href="${linkDef.href}">${html}</a> `;
     }
   });
 
@@ -75,26 +75,20 @@ async function getData() {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error("fjhafalkjfla");
+      throw new Error("errrrror");
     }
     const json = await response.json();
     console.log(json);
     if (aboutText)
       aboutText.innerHTML = portableTextToHTML(json.result[0].aboutText);
-    if (mainText) mainText.innerHTML = json.result[0].mainText;
-    floatingImageBlock.setAttribute("src", json.result[0].posterUrl);
+    if (currentText) currentText.innerHTML = json.result[0].currentText;
+    currentPosterBlock.setAttribute("src", json.result[0].posterUrl);
   } catch (error) {
     console.log(error.message);
   }
 }
 
 getData();
-//Variables to write in manually :(
-const screeningDay = 3;
-//const filmDurationHours = 2;
-//const filmDurationMinutes = 23;
-//const screeningStartHour = 7;
-const daysBetween = 4;
 
 const timeElement = document.querySelector(".time");
 const dateElement = document.querySelector(".date");
@@ -142,51 +136,6 @@ function screeningDayCommunication(date) {
   const minutes = date.getMinutes();
   const AM = date.getHours() < 12;
   const day = date.getDate();
-
-  // variables for the end of the film
-  //let screeningEndHour = screeningStartHour + filmDurationHours;
-  //const screeningEndMinute = filmDurationMinutes;
-
-  //thing to prevent displaying screening now banner too early
-  //if (AM)
-  //{ screeningEndHour = 99;}
-
-  //[[[i use these to comment out thingss i dont want to use but theyre already in the comments]]]
-
-  // variables for 'Screening Now!' blinking span, Thanks text when the film ends
-  //const filmEndedToday = day===screeningDay && !AM && ((hours12===screeningEndHour && minutes > screeningEndMinute)||hours12 > screeningEndHour);
-  //   const thanksDays = screeningDay + 7 > day && day > screeningDay;
-
-  //variable to check if it is screening day [[[and film hasn't started]]]
-  //   const screeningDayToday = day === screeningDay;
-  //&& ((hours12<screeningStartHour) || (AM && hours12>=screeningStartHour));
-
-  //variable to check if the film is screening now
-  //const screeningNow = day===screeningDay && !AM && hours12 >=  screeningStartHour && !filmEndedToday;
-
-  // hide date and time on the day of the screening
-  // document.getElementById('show-hide-timestamp').style.display =  screeningDayToday ? "none" : "inline" ;
-  //&& !filmEndedToday ? "none" : "inline" ;
-
-  // show Screening Day blinking banner
-  //   document.getElementById("blinking-span-day").style.display = screeningDayToday
-  //     ? "inline"
-  //     : "none";
-
-  // Screening Now blinking banner
-  // document.getElementById('blinking-span-now').style.display = screeningNow ? "inline" : "none";
-
-  //show the container with the thanks message
-  //   document.getElementById("show-hide-thanks").style.display = thanksDays
-  //     ? "flex"
-  //     : "none";
-  //|| filmEndedToday ? "flex" : "none";
-
-  //hide posters to make space for the thanks message
-  //   document.getElementById("show-hide-posters").style.display = !thanksDays
-  //     ? "flex"
-  //     : "none";
-  //&& !filmEndedToday ? "flex" : "none";
 }
 
 setInterval(() => {
@@ -195,7 +144,3 @@ setInterval(() => {
   timeElement.textContent = formatTime(now);
   screeningDayCommunication(now);
 }, 1);
-
-//DAYS      const DAYS = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday" ];
-//DAYS      ${DAYS[date.getDay()]},
-//SECONDS   ${seconds.toString().padStart(2,"0")}

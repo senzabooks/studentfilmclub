@@ -1,10 +1,10 @@
-let movingDiv = document.getElementById("floatingDiv");
-let floatingImage = document.getElementById("floatingImage");
+let movingDiv = document.getElementById("floating-div");
+let currentPoster = document.getElementById("current-poster");
 
 let xPos = 0; // Start at left
 let yPos = 0; // Start at top
-let xSpeed = 0.5;
-let ySpeed = 0.5;
+let xSpeed = 0.7;
+let ySpeed = 0.7;
 
 function updatePosition() {
   xPos += xSpeed;
@@ -20,8 +20,8 @@ function updatePosition() {
 }
 
 function adjustPositionOnResize() {
-  xPos = Math.min(xPos, window.innerWidth - floatingImage.offsetWidth);
-  yPos = Math.min(yPos, window.innerHeight - floatingImage.offsetHeight);
+  xPos = Math.min(xPos, window.innerWidth - currentPoster.offsetWidth);
+  yPos = Math.min(yPos, window.innerHeight - currentPoster.offsetHeight);
 
   movingDiv.style.left = xPos + "px";
   movingDiv.style.top = yPos + "px";
