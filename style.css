@@ -141,10 +141,9 @@ sup {
 }
 
 #content-container {
-  /* padding-bottom: 2rem; */
+  padding-bottom: 2rem;
   margin: auto;
-  height: 100vh;
-  overflow-y: scroll;
+  
 }
 
 footer {
