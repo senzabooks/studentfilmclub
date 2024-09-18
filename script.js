@@ -1,7 +1,24 @@
+const toggleLink = document.getElementById("toggle-link");
 const aboutText = document.getElementsByClassName("about-text")[0];
 const currentText = document.getElementsByClassName("current-text")[0];
 const currentPosterBlock = document.getElementById("current-poster");
-//console.log(currentText, aboutText);
+
+let showActive = true;
+
+toggleLink.addEventListener("click", (event) => {
+
+  if (showActive) {
+    currentText.style.display = "none";
+    aboutText.style.display = "block";
+    currentPosterBlock.style.display = "none";
+  } else {
+    currentText.style.display = "block";
+    aboutText.style.display = "none";
+    currentPosterBlock.style.display = "block";
+  }
+
+  showActive = !showActive; // Toggle the state
+});
 
 const groq_query = `*[_type == "main"] {
     aboutText,
@@ -78,7 +95,6 @@ async function getData() {
       throw new Error("errrrror");
     }
     const json = await response.json();
-    console.log(json);
     if (aboutText)
       aboutText.innerHTML = portableTextToHTML(json.result[0].aboutText);
     if (currentText) currentText.innerHTML = json.result[0].currentText;
@@ -144,3 +160,78 @@ setInterval(() => {
   timeElement.textContent = formatTime(now);
   screeningDayCommunication(now);
 }, 1);
+
+
+// FLOATING PART
+
+let movingDiv = document.getElementById("floating-div");
+let currentPoster = document.getElementById("current-poster");
+
+let xPos = 0; // Start at left
+let yPos = 0; // Start at top
+let xSpeed = 0.7;
+let ySpeed = 0.7;
+
+function updatePosition() {
+  xPos += xSpeed;
+  yPos += ySpeed;
+
+  if (xPos + movingDiv.offsetWidth >= window.innerWidth || xPos <= 0)
+    xSpeed = -xSpeed;
+  if (yPos + movingDiv.offsetHeight >= window.innerHeight || yPos <= 0)
+    ySpeed = -ySpeed;
+
+  movingDiv.style.left = xPos + "px";
+  movingDiv.style.top = yPos + "px";
+}
+
+var intervalId = setInterval(updatePosition, 10);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleLink = document.getElementById("toggle-link");
+  const currentText = document.querySelector(".current-text");
+  const aboutText = document.querySelector(".about-text");
+  const floatingDiv = document.getElementById("floating-div");
+
+  // Variables for floating div animation
+  let xPos = 0;
+  let yPos = 0;
+  let xSpeed = 0.7;
+  let ySpeed = 0.7;
+  let intervalId;
+
+  function updatePosition() {
+    xPos += xSpeed;
+    yPos += ySpeed;
+
+    if (xPos + floatingDiv.offsetWidth >= window.innerWidth || xPos <= 0)
+      xSpeed = -xSpeed;
+    if (yPos + floatingDiv.offsetHeight >= window.innerHeight || yPos <= 0)
+      ySpeed = -ySpeed;
+
+    floatingDiv.style.left = xPos + "px";
+    floatingDiv.style.top = yPos + "px";
+  }
+
+  function startFloating() {
+    intervalId = setInterval(updatePosition, 10);
+  }
+
+  function stopFloating() {
+    clearInterval(intervalId);
+  }
+
+  // Start the floating movement
+  startFloating();
+
+  // Adjust position on window resize
+  window.addEventListener("resize", function () {
+    xPos = Math.min(xPos, window.innerWidth - floatingDiv.offsetWidth);
+    yPos = Math.min(yPos, window.innerHeight - floatingDiv.offsetHeight);
+    floatingDiv.style.left = xPos + "px";
+    floatingDiv.style.top = yPos + "px";
+  });
+
+});
+

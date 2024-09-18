@@ -15,9 +15,7 @@
     />
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
     <link href="assets/icons/favicon.ico" rel="icon" type="image/x-icon" />
-
-    <script src="noscroll.js" async></script>
-    <script src="floating.js" async></script>
+    <script src="script.js" async></script>
 
     <title>Student Film Club</title>
   </head>
@@ -32,9 +30,7 @@
           <div class="nav-container">
             <nav class="nav-bar">
               <p class="prevent-spaces">
-                <a class="text-link" href="about/index.html"
-                  >student film club</a
-                >
+                <button id="toggle-link" href="#">student film club</button>
                 <span>, </span>
 
                 <span id="timestamp">
@@ -50,6 +46,10 @@
         <div class="text-container">
           <div class="current-text"></div>
         </div>
+
+        <div class="text-container">
+          <div class="about-text"></div>
+        </div>
       </div>
 
       <!--
@@ -61,6 +61,5 @@
      </footer>
       -->
     </div>
-    <script src="script.js" async></script>
   </body>
 </html>

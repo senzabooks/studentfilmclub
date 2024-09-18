@@ -60,6 +60,16 @@ header {
   align-items: left;
 }
 
+#toggle-link {
+  border: 0;
+  cursor: pointer;
+  background: none;
+}
+
+#toggle-link:hover {
+  opacity: 60%;
+}
+
 #floating-div {
   position: absolute;
   z-index: 9999;
@@ -94,6 +104,9 @@ header {
   width: min(680px, 100%);
   margin-left: 0.5%;
   margin-right: 0.5%;
+}
+.about-text {
+  display: none;
 }
 .about-text p {
   margin-bottom: 25px;
