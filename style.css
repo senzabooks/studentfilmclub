@@ -135,14 +135,16 @@ sup {
 
 #page-container {
   position: relative;
-  width: 90%;
+  width: 95%;
+  padding-left: 5%;
   min-height: 100vh;
-  margin: auto;
 }
 
 #content-container {
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   margin: auto;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 footer {
