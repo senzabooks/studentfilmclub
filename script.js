@@ -126,7 +126,8 @@ function formatTime(date) {
 
   return `${hours12.toString().padStart(1, "0")}:${minutes
     .toString()
-    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${
+    .padStart(2, "0")}
+     ${
     AM ? "am" : "pm"
   }`;
   /*:${seconds.toString().padStart(2,"0")}*/

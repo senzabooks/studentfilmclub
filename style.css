@@ -37,6 +37,7 @@ a {
 
 a:hover {
   opacity: 60%;
+
 }
 
 /*MAIN*/
@@ -146,27 +147,6 @@ sup {
   
 }
 
-footer {
-  position: absolute;
-  padding-bottom: 0.5rem;
-  bottom: 0;
-  width: 100%;
-  height: 2rem;
-  text-align: right;
-}
-
-.footer-text {
-  font-size: 12px;
-  opacity: 60%;
-}
-
-.footer-link {
-  font-size: 12px;
-}
-
-.footer-link a:hover {
-  color: blue;
-}
 
 /* ANIMATION */
 @-moz-keyframes blink {
