@@ -72,8 +72,6 @@ header {
 
 #floating-div {
   position: absolute;
-  width: 25vw;
-  height: 34.58vh;
   z-index: 9999;
   pointer-events: none;
 }
