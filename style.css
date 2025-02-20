@@ -142,6 +142,7 @@ sup {
 
 
 #header {
+  width: 100%;
   display: flex;
   position: fixed;
   top: 0;
@@ -170,67 +171,7 @@ sup {
   object-fit: cover;
 }
 
-/* ANIMATION */
-@-moz-keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  69% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
-@-webkit-keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  69% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  69% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  61% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
 
 /* MEDIA RESPONSIVE */
 
