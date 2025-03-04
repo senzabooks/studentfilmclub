@@ -44,7 +44,7 @@ a:hover {
 
 
 .nav-container {
-  width: 99%;
+  padding-left: 1rem;
   /* margin: auto; */
 }
 
@@ -72,6 +72,10 @@ a:hover {
   z-index: 9999;
   pointer-events: none;
 }
+
+/* .current-text {
+  display: block;
+} */
 
 #current-poster {
   width: 25vw;
@@ -142,11 +146,10 @@ sup {
 
 
 #header {
-  max-width: 100%;
+  width: 100%;
   display: flex;
   position: fixed;
   top: 0;
-  padding: 0 0 0 1rem;
   background: white;
 
 }
