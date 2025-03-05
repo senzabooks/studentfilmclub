@@ -131,7 +131,7 @@ li {
 #content-container {
   /* padding-bottom: 2rem; */
   /* margin: auto; */
-  background-color: white;
+  /* background-color: white; */
 }
 
 
@@ -140,7 +140,7 @@ li {
   display: flex;
   position: fixed;
   top: 0;
-  background: white;
+  /* background: white; */
 
 }
 #header .nav-container, .text-container {
@@ -193,7 +193,7 @@ object-fit: cover;
 
   #poster-board {
     transform: rotate(90deg); 
-    width: 120%; 
+    width: 100%; 
    }
 
   .text-container {
