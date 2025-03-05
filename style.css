@@ -193,7 +193,7 @@ object-fit: cover;
 
   #poster-board {
     transform: rotate(90deg); 
-    width: 80%; 
+    width: 120%; 
    }
 
   .text-container {
