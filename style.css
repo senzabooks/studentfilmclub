@@ -24,10 +24,6 @@ body {
   font-size: 0rem;
 }
 
-/*class added to force a line break on screens below 560 px*/
-.mobile-line-break {
-  display: none;
-}
 
 /*LINKS*/
 a {
@@ -208,25 +204,7 @@ object-fit: cover;
 }
 
 
-
-@media (max-width: 331px) {
- 
-  .mobile-line-break {
-    display: flex;
-  }
-
-  
-}
-
 /* "The classroom with all its limitations remains a location of possibility."
  ~bell hooks 
  
- 
- img {
-  max-width: 100%;
-  padding: 0.5rem;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-*/
+ */
