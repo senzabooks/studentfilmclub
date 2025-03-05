@@ -4,7 +4,7 @@ const header = document.getElementById("header");
 const textContainer = document.getElementsByClassName("text-container")[0];
 const currentText = document.getElementsByClassName("current-text")[0];
 // const currentPosterBlock = document.getElementById("current-poster");
-const currentPosterBlock = document.getElementById("new-current-poster");
+const currentPosterBlocks = document.getElementsByClassName("new-current-poster");
 const posterBoard = document.getElementById("poster-board");
 
 
@@ -88,8 +88,15 @@ async function getData() {
     if (aboutText)
       aboutText.innerHTML = portableTextToHTML(json.result[0].aboutText);
     if (currentText) currentText.innerHTML = json.result[0].currentText;
-    // currentPosterBlock.setAttribute("src", json.result[0].posterUrl);
-    posterBoard.style.backgroundImage = `url(${json.result[0].posterUrl})`;
+     Array.from(currentPosterBlocks).forEach((posterBlock) => {
+      
+      posterBlock.setAttribute("src", json.result[0].posterUrl);
+
+     })
+     
+     
+    
+    // posterBoard.style.backgroundImage = `url(${json.result[0].posterUrl})`;
   } catch (error) {
     console.log(error.message);
   }
@@ -177,7 +184,7 @@ toggleLink.addEventListener("click", (event) => {
   } else {
     // textContainer.style.display = "block";
     aboutText.style.display = "none";
-    posterBoard.style.display = "block";
+    posterBoard.style.display = "flex";
     header.style.position = "fixed";
     textContainer.style.height = "auto";
   }
