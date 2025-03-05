@@ -3,6 +3,12 @@
   src: url("assets/fonts/SFC-Clock-Regular.woff2");
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +16,10 @@
   font-size: 17px;
   font-weight: 400;
   line-height: 130%;
-  color: blue;
+  color: rgb(184, 13, 59);
 }
+
+
 
 body {
   /* background:rgb(240, 132, 55);*/
@@ -101,9 +109,6 @@ li {
   line-height: 1.5rem;
 }
 
-sup {
-  font-size: 0.65rem;
-}
 
 #timestamp {
   display: inline;
