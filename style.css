@@ -21,15 +21,9 @@ html {
 
 
 body {
-  /* background:rgb(240, 132, 55);*/
   background: white;
   color: #000;
   position: relative;
-}
-
-/* Getting rid of the space between two spans*/
-.prevent-spaces {
-  font-size: 0rem;
 }
 
 
@@ -46,12 +40,7 @@ a:hover {
 
 /*MAIN*/
 
-
-
-
 .nav-bar {
-  /* width: 100%; */
-  /* min-height: 50px; */
   margin: auto;
   text-align: left;
   padding-left: 1rem;
@@ -128,19 +117,12 @@ li {
   width: min(680px, 100%);
 }
 
-#content-container {
-  /* padding-bottom: 2rem; */
-  /* margin: auto; */
-  /* background-color: white; */
-}
-
-
 #header {
   width: 100%;
   display: flex;
   position: fixed;
   top: 0;
-  /* background: white; */
+  
 
 }
 #header .nav-container, .text-container {
@@ -161,8 +143,7 @@ li {
  position:fixed;
  display: flex;
  flex-wrap: wrap;
- width: 75vw; /*this has to be 5 times newcurrentposter width */
- 
+ width: 75%;
 }
 
 .new-current-poster {
